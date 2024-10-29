@@ -35,9 +35,16 @@ clearNoteBtn.addEventListener("click", () => {
         alert("Your notes have been cleared.");
     }
 });
-// function addNotes() {
-//     notesContent.style.display = "block";
-//     noteInput.value = "";
-    
 
-// };
+function saveNote() {
+    const note = noteInput.value.trim();
+    if(note) {
+        localStorage.setItem("savedNote", note);
+        alert("Your note has been saved.");
+        noteInput.value = ""; // gets an alert if not is empty
+    } else {
+        alert("Please enter a note before saving.");
+    }
+
+};
+saveNoteBtn.addEventListener("click", saveNote);
