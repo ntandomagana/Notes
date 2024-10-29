@@ -3,16 +3,20 @@ const notesContent = document.getElementById('notesContent');
 const deleteNoteBtn = document.getElementById('deleteBtn');
 const clearNoteBtn = document.getElementById('clearBtn');
 const noteInput = document.getElementById('noteInput');
+const saveNoteBtn = document.getElementById('saveNotebtn');
 
 //this will hide the notes container
-// notesContent.style.display = 'none';
+notesContent.style.display = 'none';
+saveNoteBtn.style.display = 'none'; 
 
 
 //when user clicks this button, the content pops up in a 
-
-// addNoteBtn.addEventListener ("click", () => {
-//     notesContent.style.display = 'block';
-// });
+//Save note button shows up too
+addNoteBtn.addEventListener ("click", () => {
+    notesContent.style.display = 'block';
+    saveNoteBtn.style.display = 'inline-block'; 
+    
+});
 
 
 deleteNoteBtn.addEventListener("click", () => {
