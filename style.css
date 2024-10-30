@@ -63,7 +63,6 @@ h1 {
 }
 
 
-
 .buttons {
     display: inline-block;
 }
@@ -78,6 +77,13 @@ h1 {
     width: 110px;
 }
 
+.addNotebtn:hover {
+    background-color: var(--bright-white);
+    color: var(--port);
+    border: 2px solid var(--port);
+
+}
+
 .saveNotebtn {
     background-color: var(--dried-lilac);
     color: white;
@@ -89,6 +95,24 @@ h1 {
     
 }
 
+.saveNotebtn:hover {
+    background-color: var(--bright-white);
+    color: #BBBBFF;
+    border: 2px solid #BBBBFF;
+
+}
+
+.seeNotes {
+    color: #432722;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer; 
+}
+
+.seeNotes:hover {
+    color: var(--bright-white);
+    text-decoration: underline;
+}
 #noteInput {
     width: 400px;
     height: 250px;
@@ -114,7 +138,11 @@ h1 {
     font-weight: bold;
     margin-left: 10px;
 }
-
+.delete-button:hover {
+    background-color: var(--bright-white);
+    color: var(--polished-mahogany);
+    border: 2px solid var(--polished-mahogany);
+}
 .clear-button {
     background-color: var(--butternut-squah);
     color: white;
@@ -123,4 +151,10 @@ h1 {
     cursor: pointer;
     font-weight: bold;
     margin-left: 10px;
+}
+
+.clear-button:hover {
+    background-color: var(--bright-white);
+    color: var(--butternut-squah);
+    border: 2px solid var(--butternut-squah);
 }
