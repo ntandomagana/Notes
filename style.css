@@ -18,13 +18,13 @@ body {
     background: linear-gradient(#FC7604, #432722,#0E4D4E, #BBBBFF);
     background-size: cover;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
 h1 {
-    font-family: 'Nordic Noir', cursive;
+    font-family: Arial, sans-serif;
     color: var(--port);
     font-size: 24px;
     text-align: center;
@@ -33,12 +33,11 @@ h1 {
 .container {
     width: 500px;
     height: 500px;
-
     background-color: #f8a761;
     justify-content: center;
     border-radius: 10px;
     width: 500px;
-    display: block;
+    /* display: block; */
     margin: 15% auto;
     padding: 20px;
 
@@ -52,6 +51,7 @@ h1 {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 #notesContent {
@@ -63,9 +63,6 @@ h1 {
 }
 
 
-.buttons {
-    display: inline-block;
-}
 
 .addNotebtn {
     background-color: var(--port);
@@ -112,6 +109,11 @@ h1 {
 .seeNotes:hover {
     color: var(--bright-white);
     text-decoration: underline;
+}
+
+.addNotebtn, .saveNotebtn {
+    /* Optional styling for buttons */
+    padding: 8px 12px;
 }
 #noteInput {
     width: 400px;
