@@ -6,6 +6,7 @@ const clearNoteBtn = document.getElementById('clearBtn');
 const noteInput = document.getElementById('noteInput');
 const saveNoteBtn = document.getElementById('saveNotebtn');
 const notesList = document.getElementById('notesList');
+const seeAllNotes = document.getElementById('seeAllNotes');
 //this array hold the notes that are saved. each notes saved is storedhere
 let savedNotes = JSON.parse(localStorage.getItem('savedNotes')) || [];
 //this will hide the notes container
@@ -26,6 +27,7 @@ function saveNote() {
     if(note) {
         savedNotes.push(note);
         localStorage.setItem("savedNotes", JSON.stringify(savedNotes));
+        console.log("Saved notes:", savedNotes);
         alert("Your note has been saved.");
         noteInput.value = ""; // gets an alert if not is empty
     } else {
@@ -53,29 +55,36 @@ clearNoteBtn.addEventListener("click", () => {
 });
 
 function loadNotes() {
-    // const notes = JSON.parse(localStorage.getItem('savedNotes')) || [];
+    const savedNotes = JSON.parse(localStorage.getItem('savedNotes')) || [];
+    // console.log("Loaded notes:", savedNotes); 
     notesList.innerHTML = "";
 
     if(savedNotes.length === 0) {
         notesList.textContent = "You have no saved notes.";
-
     } else {
+        const ul = document.createElement('ul');
+
     savedNotes.forEach((note, index) => {
-        const noteItem = document.createElement('div');
-        noteItem.className = 'note-item';
-        noteItem.textContent = `Note`;
-        noteItem.dataset.noteIndex = index;
-        noteItem.style.cursor = 'pointer';
+        const li = document.createElement('li');
+        li.className = 'note-item';
+        li.textContent = `Note ${index + 1}: ${note}`;
+        li.dataset.noteIndex = index;
+        li.style.cursor = 'pointer';
         // notesContainer.appendChild(noteItem);
 
-        notesList.appendChild(noteItem);
+       
 
-        noteItem.addEventListener("click", () => {
+        // notesList.appendChild(noteItem);
+
+        li.addEventListener("click", () => {
             showNoteContent(index);
         });
 
+        ul.appendChild(li);
+
        
     });
+    notesList.appendChild(ul);
 }
 }
 
@@ -86,8 +95,15 @@ function showNoteContent(index) {
 
 
 seeAllNotes.addEventListener('click', () => {
-    notesContent.style.display = 'block';
+    // console.log("See All Notes button clicked");
+    notesContent.style.display = 'none';
     saveNoteBtn.style.display = 'none';
+    addNoteBtn.style.display = 'none';
+    deleteNoteBtn.style.display = 'none';
+    clearNoteBtn.style.display = 'none';
+    noteInput.style.display = 'none';
+
+    notesList.style.display = 'block';
     loadNotes();
 
 });
