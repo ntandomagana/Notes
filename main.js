@@ -71,9 +71,6 @@ function loadNotes() {
         li.dataset.noteIndex = index;
         li.style.cursor = 'pointer';
         // notesContainer.appendChild(noteItem);
-
-       
-
         // notesList.appendChild(noteItem);
 
         li.addEventListener("click", () => {
